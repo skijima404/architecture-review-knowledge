@@ -1,0 +1,17 @@
+# Obsidian内部のプラグイン・テーマなどの個人環境設定
+.obsidian/plugins/
+.obsidian/themes/
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# OSごとのゴミファイル
+.DS_Store
+Thumbs.db
+
+# Obsidian Sync（使っていれば）
+.obsidian-sync.json
+
+# Macのバックアップファイルなど
+*.swp
+*.swo
+*.tmp
