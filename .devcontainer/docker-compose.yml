@@ -8,6 +8,9 @@ services:
       - 7687:7687  # Bolt (Cypher query)
     environment:
       - NEO4J_AUTH=neo4j/testpassword
+      - NEO4J_PLUGINS=["apoc"]
+      - NEO4J_apoc_import_file_enabled=true
+      - NEO4J_dbms_security_procedures_unrestricted=apoc.\\*
     volumes:
       - neo4j-data:/data
       - ..:/workspace
