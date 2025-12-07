@@ -3,8 +3,10 @@ id: sc-001
 title: [Clear, outcome-oriented success condition]
 type: success_criteria
 threatened_by:
-  - rf-001
-  - rf-002
+  - "[[rf-001]]"
+  - "[[rf-002]]"
+related_success_criteria:
+  - "[[sc-002]]"
 tags: [success_criteria]
 ---
 

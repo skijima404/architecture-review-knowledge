@@ -4,12 +4,12 @@ title: [Observed failure or risk]
 type: symptom
 observed_in_phase:
   - E
-caused_by:
-  - rc-101
-triggers_symptoms:
-  - rf-999
-related_success_criteria:
-  - sc-001
+triggered_by:
+  - "[[rc-101]]"
+triggers:
+  - "[[rf-999]]"
+threatens:
+  - "[[sc-001]]"
 tags: [symptom]
 ---
 
@@ -21,4 +21,3 @@ In what scenario or condition was this symptom observed?
 
 ## Severity
 (Optional) High / Medium / Low
-

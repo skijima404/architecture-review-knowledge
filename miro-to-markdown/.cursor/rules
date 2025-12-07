@@ -1,0 +1,42 @@
+# Miro-to-Markdown Subproject - Cursor Rules
+
+## Subproject Context
+This subproject implements:
+1. A local Backcasting MCP server (read/write Markdown nodes)
+2. Miro → Markdown conversion pipeline
+
+## Key Specifications
+- MCP interface: `docs/backcasting-mcp-spec.md`
+- Node format: `docs/backcasting-map-spec.md`
+- Product vision: `docs/prod-vision.md`
+
+## Technical Stack (Target)
+- Python 3.11+
+- `python-frontmatter` for Markdown parsing
+- MCP SDK or custom JSON-RPC for MCP tools
+- Miro REST API or Miro MCP (TBD after spike)
+
+## Implementation Guidelines
+- Keep the MCP server simple; run locally without heavy infrastructure
+- Prefer plain files + conventions over database
+- All MCP tool responses follow HATEOAS pattern with `_links`
+- Preserve existing node IDs when updating; generate new IDs only for new nodes
+
+## Directory Structure (Target)
+```
+miro-to-markdown/
+├── docs/           # Specifications
+├── src/
+│   ├── mcp_server/ # Backcasting MCP server
+│   └── miro_client/# Miro API integration
+├── tests/
+└── README.md
+```
+
+## Current Phase
+Phase 1: Backcasting MCP Server (Local Read/Write)
+- Focus on `get_template`, `get_node`, `write_node` first
+- Chain traversal (`get_chain_from_root`) in Phase 2
+
+
+

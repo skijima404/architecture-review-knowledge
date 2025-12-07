@@ -1,0 +1,32 @@
+# Architecture Review Knowledge - Cursor Rules
+
+## Project Context
+This is an Obsidian Vault containing a structured knowledge base for architecture reviews.
+The core data model consists of three node types:
+- Success Criteria (sc-xxx) in `success_criteria/`
+- Symptom (rf-xxx) in `symptom/`
+- Root Cause (rc-xxx) in `root_cause/`
+
+## Key Specifications
+- Node Markdown format: see `miro-to-markdown/docs/backcasting-map-spec.md`
+- Relationship field names (ADR-0004):
+  - `triggers` / `triggered_by` — for RC→Symptom, Symptom→Symptom relationships
+  - `threatens` / `threatened_by` — for Symptom→SC relationships
+  - `leads_to` / `leads_from` — for RC→RC relationships (symmetric pair)
+- Do NOT use deprecated names: `caused_by`, `triggers_symptoms`, `triggers_root_causes`, `explained_by`
+
+## Conventions
+- All node IDs must be unique
+- `type` field is the source of truth for node type, NOT the `id` prefix
+- Relationship references use Obsidian link format: `"[[rc-001]]"`
+- YAML frontmatter keys require a space after `:`
+- Empty lists use `key: []`, never `- []`
+
+## Language
+- Code, frontmatter keys, and technical terms: English
+- Body content (Description, Context, Impact): Japanese or English depending on context
+
+## Active Work
+Current focus: `miro-to-markdown/` — building Backcasting MCP server and Miro integration.
+See `miro-to-markdown/docs/prod-vision.md` for Epic vision.
+

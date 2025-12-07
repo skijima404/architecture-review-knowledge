@@ -15,3 +15,6 @@ Thumbs.db
 *.swp
 *.swo
 *.tmp
+
+# トークン情報が格納されているファイル
+*.env

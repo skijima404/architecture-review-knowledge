@@ -1,0 +1,312 @@
+# Backcasting Node List
+# Generated from Miro board: Backcasting Map
+# Board ID: uXjVGfVHJzc=
+# Date: 2025-12-07 22:47:45
+#
+# Review this file and adjust IDs if needed.
+# Then run the Markdown generator.
+
+metadata:
+  board_id: uXjVGfVHJzc=
+  board_name: Backcasting Map
+  generated_at: '2025-12-07T22:47:45.419067'
+  total_nodes: 74
+success_criteria:
+- id: sc-001
+  title: Realization of Business Outcomes
+  miro_id: '3458764651489083102'
+  existing_match: sc-001
+- id: sc-002
+  title: Compliance with Architecture Principles
+  miro_id: '3458764651489083037'
+  existing_match: sc-002
+- id: sc-003
+  title: Realization of Architecture Vision
+  miro_id: '3458764651489083038'
+  existing_match: sc-003
+- id: sc-004
+  title: Successful Migration
+  miro_id: '3458764651489083039'
+  existing_match: sc-004
+- id: sc-005
+  title: Day 1 Operation Success
+  miro_id: '3458764651489083040'
+  existing_match: sc-005
+- id: sc-006
+  title: Day 2 Operation Success
+  miro_id: '3458764651489083058'
+  existing_match: sc-006
+- id: sc-007
+  title: Successful Functional Extensibility
+  miro_id: '3458764651489083114'
+  existing_match: sc-007
+symptom:
+- id: rf-001
+  title: Repeated delays
+  miro_id: '3458764651489083073'
+  existing_match: rf-001
+- id: rf-002
+  title: Production data contamination
+  miro_id: '3458764651489083085'
+  existing_match: rf-002
+- id: rf-003
+  title: Capacity shortage
+  miro_id: '3458764651489083096'
+  existing_match: rf-003
+- id: rf-004
+  title: Design-induced operational risk
+  miro_id: '3458764651489083057'
+  existing_match: rf-004
+- id: rf-005
+  title: Security incident
+  miro_id: '3458764651489083104'
+  existing_match: rf-005
+- id: rf-006
+  title: DR switchover failure
+  miro_id: '3458764651489083119'
+  existing_match: rf-006
+- id: rf-007
+  title: Extended time required for troubleshooting
+  miro_id: '3458764651489083093'
+  existing_match: rf-007
+- id: rf-008
+  title: Unable to accommodate business needs / low responsiveness
+  miro_id: '3458764651489083115'
+  existing_match: rf-008
+- id: rf-009
+  title: Business Outcome Was Not Achieved
+  miro_id: '3458764651489083194'
+  existing_match: rf-009
+- id: rf-010
+  title: Misaligned with architecture principles
+  miro_id: '3458764651489083198'
+  existing_match: rf-010
+- id: rf-011
+  title: Misaligned with architecture vision
+  miro_id: '3458764651489083204'
+  existing_match: rf-011
+- id: rf-012
+  title: Numerous bugs occurred
+  miro_id: '3458764651489083078'
+  existing_match: rf-012
+root_cause:
+- id: rc-001
+  title: Architecture misaligned with modern concerns
+  miro_id: '3458764651489083142'
+  existing_match: rc-001
+- id: rc-001
+  title: Architecture misaligned with modern concerns
+  miro_id: '3458764651489083144'
+  existing_match: rc-001
+- id: rc-002
+  title: Upgradeability not considered
+  miro_id: '3458764651489083153'
+  existing_match: rc-002
+- id: rc-002
+  title: Upgradeability not considered
+  miro_id: '3458764651489083155'
+  existing_match: rc-002
+- id: rc-002
+  title: Upgradeability not considered
+  miro_id: '3458764651489083157'
+  existing_match: rc-002
+- id: rc-002
+  title: Upgradeability not considered
+  miro_id: '3458764651489083159'
+  existing_match: rc-002
+- id: rc-003
+  title: Unclear responsibility boundaries among DevOps, infrastructure, and application operations
+  miro_id: '3458764651489083129'
+  existing_match: rc-003
+- id: rc-003
+  title: Unclear responsibility boundaries among DevOps, infrastructure, and application operations
+  miro_id: '3458764651489083131'
+  existing_match: rc-003
+- id: rc-004
+  title: Insufficient PoC for feasibility
+  miro_id: '3458764651489083083'
+  existing_match: rc-004
+- id: rc-005
+  title: Lack of early test scaffolding
+  miro_id: '3458764651489083146'
+  existing_match: rc-005
+- id: rc-006
+  title: Unrealistic transition architecture
+  miro_id: '3458764651489083072'
+  existing_match: rc-006
+- id: rc-007
+  title: Structural design inhibits testability
+  miro_id: '3458764651489083106'
+  existing_match: rc-007
+- id: rc-008
+  title: Interface contract not defined or insufficient
+  miro_id: '3458764651489083161'
+  existing_match: rc-008
+- id: rc-008
+  title: Interface contract not defined or insufficient
+  miro_id: '3458764651489083163'
+  existing_match: rc-008
+- id: rc-009
+  title: Test architecture not considered
+  miro_id: '3458764651489083090'
+  existing_match: rc-009
+- id: rc-010
+  title: Test-enabling technology or environment not planned
+  miro_id: '3458764651489083165'
+  existing_match: rc-010
+- id: rc-011
+  title: Baseline architecture capacity not analyzed
+  miro_id: '3458764651489083100'
+  existing_match: rc-011
+- id: rc-012
+  title: External system dependencies not captured in baseline architecture
+  miro_id: '3458764651489083185'
+  existing_match: rc-012
+- id: rc-013
+  title: Baseline Architecture understanding was insufficient
+  miro_id: '3458764651489083076'
+  existing_match: rc-013
+- id: rc-014
+  title: Codebase too entangled for safe cutover
+  miro_id: '3458764651489083148'
+  existing_match: rc-014
+- id: rc-015
+  title: Component-level test strategy was insufficient
+  miro_id: '3458764651489083088'
+  existing_match: rc-015
+- id: rc-016
+  title: Extensibility not considered
+  miro_id: '3458764651489083117'
+  existing_match: rc-016
+- id: rc-016
+  title: Extensibility not considered
+  miro_id: '3458764651489083136'
+  existing_match: rc-016
+- id: rc-016
+  title: Extensibility not considered
+  miro_id: '3458764651489083138'
+  existing_match: rc-016
+- id: rc-017
+  title: Insufficient capacity planning for the target architecture
+  miro_id: '3458764651489083098'
+  existing_match: rc-017
+- id: rc-018
+  title: Insufficient DR design
+  miro_id: '3458764651489083127'
+  existing_match: rc-018
+- id: rc-019
+  title: Insufficient DR testing
+  miro_id: '3458764651489083121'
+  existing_match: rc-019
+- id: rc-020
+  title: Insufficient testability strategy
+  miro_id: '3458764651489083081'
+  existing_match: rc-020
+- id: rc-021
+  title: Test layering strategy not defined
+  miro_id: '3458764651489083176'
+  existing_match: rc-021
+- id: rc-022
+  title: No-go criteria are undefined
+  miro_id: '3458764651489083150'
+  existing_match: rc-022
+- id: rc-023
+  title: Not a standard configuration; lacking operational knowledge
+  miro_id: '3458764651489083059'
+  existing_match: rc-023
+- id: rc-024
+  title: Operational architecture was not considered
+  miro_id: '3458764651489083091'
+  existing_match: rc-024
+- id: rc-025
+  title: Security considerations were lacking
+  miro_id: '3458764651489083108'
+  existing_match: rc-025
+- id: rc-025
+  title: Security considerations were lacking
+  miro_id: '3458764651489083110'
+  existing_match: rc-025
+- id: rc-025
+  title: Security considerations were lacking
+  miro_id: '3458764651489083111'
+  existing_match: rc-025
+- id: rc-026
+  title: Dark launch mechanism was not implemented
+  miro_id: '3458764651489083172'
+  existing_match: rc-026
+- id: rc-027
+  title: Data verification method not defined
+  miro_id: '3458764651489083214'
+  existing_match: rc-027
+- id: rc-029
+  title: Cross-boundary security considerations were lacking
+  miro_id: '3458764651489083125'
+  existing_match: rc-029
+- id: rc-030
+  title: DR continuity was not designed across systems
+  miro_id: '3458764651489083123'
+  existing_match: rc-030
+- id: rc-030
+  title: DR continuity was not designed across systems
+  miro_id: '3458764651489083212'
+  existing_match: rc-030
+- id: rc-032
+  title: Business misalignment of the vision
+  miro_id: '3458764651489083103'
+  existing_match: rc-032
+- id: rc-033
+  title: Vision was never defined
+  miro_id: '3458764651489083140'
+  existing_match: rc-033
+- id: rc-034
+  title: Unrealistic target architecture
+  miro_id: '3458764651489083191'
+  existing_match: rc-034
+- id: rc-035
+  title: Integration testing strategy was not defined
+  miro_id: '3458764651489083189'
+  existing_match: rc-035
+- id: rc-036
+  title: Not referenced during detailed implementation design
+  miro_id: '3458764651489083042'
+  existing_match: rc-036
+- id: rc-036
+  title: Not referenced during detailed implementation design
+  miro_id: '3458764651489083043'
+  existing_match: rc-036
+- id: rc-037
+  title: Insufficient alignment through the implementation phase
+  miro_id: '3458764651489083070'
+  existing_match: rc-037
+- id: rc-037
+  title: Insufficient alignment through the implementation phase
+  miro_id: '3458764651489083071'
+  existing_match: rc-037
+- id: rc-038
+  title: NFRs were not defined
+  miro_id: '3458764651489083068'
+  existing_match: rc-038
+- id: rc-038
+  title: NFRs were not defined
+  miro_id: '3458764651489083069'
+  existing_match: rc-038
+- id: rc-039
+  title: Not included in design
+  miro_id: '3458764651489083041'
+  existing_match: rc-039
+- id: rc-039
+  title: Not included in design
+  miro_id: '3458764651489083044'
+  existing_match: rc-039
+- id: rc-040
+  title: Overloaded or Contradictory Architecture Vision
+  miro_id: '3458764651489083141'
+  existing_match: rc-040
+- id: rc-041
+  title: Data migration approach was not defined
+  miro_id: '3458764651489083170'
+  existing_match: rc-041
+- id: rc-042
+  title: Integration assumptions were inconsistent across subsystems/components/services
+  miro_id: '3458764651489083187'
+  existing_match: null
