@@ -3,7 +3,7 @@
 
 # Root Cause Graph エクスポート処理：設計＆運用ノート
 
-このドキュメントは、`caused_by` を含む Root Cause ノードのエクスポート処理に関して、設計・実装・トラブルシューティングから得られた知見をまとめたものです。将来的に `triggers_symptoms` や `triggers_root_causes` など他のリレーションを扱う際にも参照できることを目的としています。
+このドキュメントは、`triggered_by` を含む Root Cause ノードのエクスポート処理に関して、設計・実装・トラブルシューティングから得られた知見をまとめたものです。将来的に `triggers` や `leads_to` など他のリレーションを扱う際にも参照できることを目的としています。
 
 ---
 
@@ -12,7 +12,7 @@
 ### 🔹 1. ハイフン直後にスペースがないリスト記述
 
 ```yaml
-caused_by:
+triggered_by:
   -"[[rc-020]]"    # ❌ 誤
   - "[[rc-020]]"   # ✅ 正
 ```
@@ -24,9 +24,9 @@ caused_by:
 ### 🔹 2. 空のリストの誤記
 
 ```yaml
-caused_by:
+triggered_by:
   - []   # ❌ 誤: リスト内に空リストが含まれる
-caused_by: []   # ✅ 正
+triggered_by: []   # ✅ 正
 ```
 
 → `- []` は `[[]]` という構造になり、文字列抽出時に失敗する。
@@ -36,8 +36,8 @@ caused_by: []   # ✅ 正
 ### 🔹 3. コロンの後にスペースがない
 
 ```yaml
-caused_by:[]   # ❌ 誤
-caused_by: []  # ✅ 正
+triggered_by:[]   # ❌ 誤
+triggered_by: []  # ✅ 正
 ```
 
 → YAML の文法上、`:` の後にはスペースが必須。
@@ -73,9 +73,9 @@ if rc_id and target_id:
 
 ## 🔄 今後の適用対象
 
-- `triggers_symptoms`
-- `triggers_root_causes`
-- `related_success_criteria`
+- `triggers`
+- `leads_to`
+- `threatens`
 - `threatened_by`
 
 → 上記も同様に YAML の構文チェックと空行排除を前提として拡張予定。

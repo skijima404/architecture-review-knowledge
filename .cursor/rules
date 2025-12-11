@@ -1,0 +1,60 @@
+# Architecture Review Knowledge - Cursor Rules
+
+## Project Context
+This is an Obsidian Vault containing a structured knowledge base for architecture reviews.
+The core data model consists of three node types:
+- Success Criteria (sc-xxx) in `success_criteria/`
+- Symptom (rf-xxx) in `symptom/`
+- Root Cause (rc-xxx) in `root_cause/`
+
+## Key Specifications
+- Node Markdown format: see `miro-to-markdown/docs/backcasting-map-spec.md`
+- Relationship field names (ADR-0004):
+  - `triggers` / `triggered_by` — for RC→Symptom, Symptom→Symptom relationships
+  - `threatens` / `threatened_by` — for Symptom→SC relationships
+  - `leads_to` / `leads_from` — for RC→RC relationships (symmetric pair)
+- Do NOT use deprecated names: `caused_by`, `triggers_symptoms`, `triggers_root_causes`, `explained_by`
+
+## Conventions
+- All node IDs must be unique
+- `type` field is the source of truth for node type, NOT the `id` prefix
+- Relationship references use Obsidian link format: `"[[rc-001]]"`
+- YAML frontmatter keys require a space after `:`
+- Empty lists use `key: []`, never `- []`
+
+## Language
+- **All outputs should be in English** — This is a knowledge repository intended for GenAI consumption and international audiences
+- Code, frontmatter keys, documentation, and technical content: English
+- Body content (Description, Context, Impact): English preferred
+- Note: Chat/conversation may be in Japanese, but generated artifacts should use English
+
+## Development Workflow
+This project uses **Gherkin-Driven Development** for GenAI collaboration.
+
+**Workflow:**
+1. Human requests feature/change
+2. GenAI drafts Gherkin scenarios in `docs/specs/*.feature`
+3. Human reviews and approves
+4. GenAI implements
+5. GenAI verifies (tests, linter)
+
+**Key files:**
+- `miro-to-markdown/docs/WORKFLOW.md` — Detailed workflow instructions
+- `miro-to-markdown/docs/specs/*.feature` — Behavior specifications
+
+**Rules for GenAI:**
+- Never implement without approved Gherkin scenarios
+- Draft scenarios first, wait for approval
+- Update `.feature` files when behavior changes
+- Verify implementation satisfies scenarios
+
+## Session Resume
+When starting a new session on miro-to-markdown:
+1. Read `docs/specs/*.feature` for current specifications
+2. Read `TASKS.md` for project status
+3. Summarize current state before proceeding
+
+## Active Work
+Current focus: `miro-to-markdown/` — Backcasting MCP server and Miro integration (Phase 3 complete).
+See `miro-to-markdown/docs/prod-vision.md` for Epic vision.
+

@@ -6,12 +6,12 @@ introduced_in_phase:
   - B
 reviewable_in_phase:
   - D
-caused_by:
-  - rc-201
-triggers_symptoms:
-  - rf-001
-triggers_root_causes:
-  - rc-202
+leads_from:
+  - "[[rc-201]]"
+triggers:
+  - "[[rf-001]]"
+leads_to:
+  - "[[rc-202]]"
 tags: [root_cause]
 ---
 
