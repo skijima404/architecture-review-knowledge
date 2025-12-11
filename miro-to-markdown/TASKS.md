@@ -46,24 +46,44 @@
 - [x] Test with real board data
 
 ### 3.3 Edge Type Extraction (Relationships)
-- [ ] Spec: Define relationship extraction rules (position/connector)
-- [ ] Implement edge detection (triggers, threatens, leads_to, etc.)
-- [ ] Test with real board data
+- [x] Spec: Define relationship extraction rules (position/connector)
+  - Connectors reference sticky notes by miro_id
+  - Edge type determined by node type + X position direction
+  - Warnings for disconnected/unknown connectors
+- [x] Implement edge detection (triggers, threatens, leads_to, etc.)
+- [x] Test with real board data
+- [x] Implement comparison script (compare_edges.py)
+- [x] Debug and fix edge direction issues
 
-### 3.4 TOGAF Phase Detection (TBD)
-- [ ] Discuss: How phases are represented on Miro board
-- [ ] Determine feasibility and approach
-- [ ] Implement if viable
+### 3.4 TOGAF Phase Detection
+- [x] Determine approach: Shape-based phase headers (A, B-D, E, F, G, H)
+- [x] Implement phase detection from X position
+- [x] Phase field mapping: introduced_in_phase (RC), observed_in_phase (SYM/SC)
+- [x] B-D expansion to ["B", "C", "D"]
 
 ### 3.5 Markdown Generation
-- [ ] Integrate with `write_node` from Phase 1
-- [ ] End-to-end test: Miro → Markdown
+- [x] Implement `generate_cli.py` for new file generation
+- [x] Implement `diff_cli.py` for diff report
+- [x] Implement `apply_diff.py` for updating existing files
+- [x] Config-based output path (`config.yaml`, `config.local.yaml`)
+- [x] End-to-end test: Miro → YAML → Markdown
 
 ---
 
 ## Phase 4: Documentation & Polish
 
-- [ ] Complete `miro-to-markdown/README.md`
-- [ ] Add usage examples
-- [ ] ADR if major decisions are made
+- [x] Complete `miro-to-markdown/README.md`
+- [x] Document Miro board rules (`docs/miro-board-rules.md`)
+- [x] Update `.cursor/rules` with language policy
+- [ ] Add usage examples (optional)
+- [ ] ADR if major decisions are made (optional)
 
+---
+
+## Completed: 2024-12-11
+
+All core functionality implemented:
+- Miro → YAML export with node type, edges, and phase detection
+- Diff generation and application for existing files
+- New Markdown file generation
+- Configurable output paths for testing vs production

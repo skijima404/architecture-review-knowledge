@@ -1,0 +1,24 @@
+# Miro to Markdown Configuration
+# Copy this file to config.local.yaml and customize for your environment
+
+# Output settings for Markdown generation
+output:
+  # Base path for output folders (relative to repo root or absolute)
+  # Examples:
+  #   "."                    → repo root
+  #   "./test_output"        → test folder in miro-to-markdown
+  #   "../my-project/docs"   → different project
+  base_path: ".."
+
+  # Folder names for each node type
+  folders:
+    success_criteria: "success_criteria"
+    symptom: "symptom"
+    root_cause: "root_cause"
+
+# Node ID prefixes (used when generating new IDs)
+id_prefixes:
+  success_criteria: "sc"
+  symptom: "rf"
+  root_cause: "rc"
+

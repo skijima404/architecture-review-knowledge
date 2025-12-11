@@ -268,6 +268,11 @@ TBD
 ## 7. Notes for Future Extensions
 
 - Assuming import into a GraphDB or a GenAI memory structure, the relationship fields in frontmatter can be mapped directly to edges
-- Miro-side expression rules (colors / prefixes / tags / swimlanes, etc.) will be defined separately in `docs/backcasting-map-miro-rules.md`
 - Any LangChain-based conversion pipeline should treat this frontmatter specification as its success criteria
 - The relationship field names in this spec (`triggers`, `triggered_by`, `threatens`, `threatened_by`, `leads_to`) are intentionally aligned with the causal edge labels defined for Graph representations to minimize cognitive load and rename overhead.
+
+---
+
+## 8. Miro Board Expression Rules
+
+See **[miro-board-rules.md](./miro-board-rules.md)** for detailed rules on how to represent Backcasting Map elements in Miro.

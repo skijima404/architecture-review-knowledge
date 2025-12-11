@@ -202,18 +202,83 @@ _warnings:
       reason: "Both ends disconnected"
 ```
 
-### 7.4 Edge Type Determination (TBD)
+### 7.4 Edge Type Determination
 
-How to determine edge type (triggers, threatens, leads_to):
-- **Option A**: By node types (RC→SYM = triggers, SYM→SC = threatens)
-- **Option B**: By connector style/color
-- **Option C**: Manual specification
+Edge types are determined by **node type combination + X position direction**.
+
+#### Board Layout
+
+```
+Left (Cause)                           Right (Effect)
+────────────────────────────────────────────────────→ X-axis
+   RC ──────────────→ SYM ──────────────→ SC
+         triggers           threatens
+```
+
+#### Direction Detection
+
+```python
+def determine_direction(start_x: float, end_x: float) -> str:
+    if end_x > start_x:
+        return "forward"   # 右方向 → triggers/threatens/leads_to
+    else:
+        return "backward"  # 左方向 → triggered_by/threatened_by/leads_from
+```
+
+#### Edge Type Mapping
+
+| From Type | To Type | Direction | Edge Label |
+|-----------|---------|-----------|------------|
+| root_cause | symptom | forward | `triggers` |
+| root_cause | symptom | backward | `triggered_by` |
+| symptom | success_criteria | forward | `threatens` |
+| symptom | success_criteria | backward | `threatened_by` |
+| root_cause | root_cause | forward | `leads_to` |
+| root_cause | root_cause | backward | `leads_from` |
+| symptom | symptom | forward | `triggers` |
+| symptom | symptom | backward | `triggered_by` |
+
+#### Cross-type Edges (Auto-inferred)
+
+For different node types (RC↔SYM, SYM↔SC), direction is auto-inferred:
+- Line direction is ignored
+- Node types determine the relationship
+- Position determines forward/backward
+
+#### Same-type Edges (Position-based)
+
+For same node types (RC↔RC, SYM↔SYM):
+- X position determines direction
+- Right = effect, Left = cause
+
+---
+
+### 7.5 Warning Categories
+
+| Warning | Description | Output |
+|---------|-------------|--------|
+| `disconnected_connectors` | Line not attached to sticky note | Terminal + YAML |
+| `unknown_edge_types` | Unexpected node type combination | Terminal + YAML |
+
+Example YAML output:
+```yaml
+_warnings:
+  disconnected_connectors:
+    - connector_id: "3458764651489083035"
+      start_connected: false
+      end_connected: false
+      reason: "Both ends disconnected"
+  unknown_edge_types:
+    - connector_id: "3458764651489083099"
+      start_type: "success_criteria"
+      end_type: "root_cause"
+      reason: "Unexpected combination SC→RC"
+```
 
 ---
 
 ## 8. Open Questions
 
-1. **Edge type determination**: How to distinguish triggers vs threatens vs leads_to?
-2. **Phase representation**: How are TOGAF phases represented on the board?
-3. **Duplicate handling**: When merging edges, how to handle conflicts?
+1. **Phase representation**: How are TOGAF phases represented on the board?
+2. **Duplicate handling**: When merging edges for same-title nodes, how to handle conflicts?
 

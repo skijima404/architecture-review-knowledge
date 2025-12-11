@@ -36,26 +36,31 @@ def normalize_title(title: str) -> str:
     return normalized
 
 
-def load_existing_nodes(repo_root: Path) -> list[ExistingNode]:
-    """Load all existing Backcasting nodes from the repository.
+def load_existing_nodes(
+    base_path: Path,
+    folders: dict[str, str] | None = None,
+) -> list[ExistingNode]:
+    """Load all existing Backcasting nodes from the specified path.
 
     Args:
-        repo_root: Path to the repository root
+        base_path: Base path to search for nodes
+        folders: Mapping of node_type to folder name (optional)
 
     Returns:
         List of ExistingNode objects
     """
     nodes = []
 
-    # Directories to scan
-    directories = {
-        "root_cause": "root_cause",
-        "symptom": "symptom",
-        "success_criteria": "success_criteria",
-    }
+    # Default directories
+    if folders is None:
+        folders = {
+            "root_cause": "root_cause",
+            "symptom": "symptom",
+            "success_criteria": "success_criteria",
+        }
 
-    for node_type, dir_name in directories.items():
-        dir_path = repo_root / dir_name
+    for node_type, dir_name in folders.items():
+        dir_path = base_path / dir_name
         if not dir_path.exists():
             continue
 
@@ -138,14 +143,20 @@ def get_next_id(id_prefix: str, existing_nodes: list[ExistingNode]) -> str:
 class NodeMatcher:
     """Matches Miro nodes to existing repository nodes."""
 
-    def __init__(self, repo_root: Path):
-        """Initialize with repository root.
+    def __init__(
+        self,
+        base_path: Path,
+        folders: dict[str, str] | None = None,
+    ):
+        """Initialize with base path and folder configuration.
 
         Args:
-            repo_root: Path to the repository root
+            base_path: Base path to search for existing nodes
+            folders: Mapping of node_type to folder name (optional)
         """
-        self.repo_root = repo_root
-        self.existing_nodes = load_existing_nodes(repo_root)
+        self.base_path = base_path
+        self.folders = folders
+        self.existing_nodes = load_existing_nodes(base_path, folders)
         self._id_counters: dict[str, int] = {}
 
     def match_or_generate_id(
