@@ -1,20 +1,27 @@
-# Obsidian内部のプラグイン・テーマなどの個人環境設定
+# Obsidian local settings
 .obsidian/plugins/
 .obsidian/themes/
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 
-# OSごとのゴミファイル
+# OS files
 .DS_Store
 Thumbs.db
 
-# Obsidian Sync（使っていれば）
+# Obsidian Sync
 .obsidian-sync.json
 
-# Macのバックアップファイルなど
+# Editor backups
 *.swp
 *.swo
 *.tmp
 
-# トークン情報が格納されているファイル
+# Local secrets
 *.env
+
+# Python environments and caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/

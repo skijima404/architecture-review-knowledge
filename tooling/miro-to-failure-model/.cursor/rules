@@ -1,0 +1,22 @@
+# Miro-to-Failure-Model Tool Rules
+
+## Subproject Context
+This tool converts Miro Backcasting Maps into the repository's curated Failure
+Model Markdown.
+
+## Key Specifications
+- Node format: `../../schemas/failure-model/node-spec.md`
+- Board rules: `../../schemas/failure-model/miro-board-rules.md`
+- Mapping rules: `../../schemas/failure-model/miro-mapping-spec.md`
+- Product direction: `../../docs/traceability/registry.md`
+
+## Technical Stack (Target)
+- Python 3.11+
+- `python-frontmatter` for Markdown parsing
+- Miro REST API
+
+## Implementation Guidelines
+- Prefer plain files + conventions over database
+- Preserve existing node IDs when updating; generate new IDs only for new nodes
+- Treat canonical schemas and retrieval policy as external contracts.
+- Do not add MCP or RAG without a new repository traceability decision.

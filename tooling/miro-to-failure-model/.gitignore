@@ -1,0 +1,21 @@
+# Environment
+.env
+*.env
+
+# Local config
+config.local.yaml
+
+# Test output
+test_output/
+output/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+*.egg-info/
+
+# IDE
+.idea/
+.vscode/
